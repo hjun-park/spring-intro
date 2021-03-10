@@ -1,5 +1,7 @@
 package springreview.demo.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import springreview.demo.domain.Member;
 import springreview.demo.repository.MemberRepository;
 import springreview.demo.repository.MemoryMemberRepository;
@@ -7,6 +9,7 @@ import springreview.demo.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
+//@Service
 public class MemberService {
 
     // @1-1 기존에는 회원 서비스가 메모리회원 리포지토리를 직접 생성하게 했지만
@@ -17,6 +20,7 @@ public class MemberService {
 
     // @1-3 Setter 형식으로 넣을 수 있게 해준다.
     //      이렇게 하면 의존관계를 자동으로 주입하게 된다.
+    // @Autowired  // 생성자가 1개라면 Autowired 생략 가능
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
