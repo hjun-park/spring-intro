@@ -2,6 +2,7 @@ package springreview.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import springreview.demo.domain.Member;
 import springreview.demo.repository.MemberRepository;
 import springreview.demo.repository.MemoryMemberRepository;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 //@Service
+@Transactional  // 해당 클래스 메소드 시 트랜잭션 시작. 정상 종료 시 트랜잭션 커밋 // 런타임 에러 발생 시 롤백하도록 설정
 public class MemberService {
 
     // @1-1 기존에는 회원 서비스가 메모리회원 리포지토리를 직접 생성하게 했지만

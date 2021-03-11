@@ -17,7 +17,7 @@ import java.util.List;
 // 회원 컨트롤러가 서비스와 리포지토리를 사용할 수 있게 의존관계 준비
 // 스프링 빈에 자동으로 등록하게 하려면 아래의 어노테이션으로 객체를 등록한다.
 // @Component / @Controller / @Repository / @Service
-//@Controller
+@Controller
 public class MemberController {
 
     private final MemberService memberService;
